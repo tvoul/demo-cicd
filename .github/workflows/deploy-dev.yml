@@ -28,7 +28,7 @@ jobs:
           SSH_PORT: ${{ secrets.SSH_PORT }}
       
       - name: Deploy from dev
-        run: ssh dev 'cd demo-cicd/ && git fetch && git pull origin main && npm install'
+        run: ssh dev 'cd dev/ && git fetch && git pull origin dev && npm install'
 
       - name: Restart app
         run: ssh dev 'pm2 restart dev'
